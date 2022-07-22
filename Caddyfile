@@ -1,5 +1,5 @@
-Host {
-	reverse_proxy https://www.baidu.com {
+:{$PORT} {
+	reverse_proxy https://lite.cnn.com {
 		header_up Host {host}
 	}
 }
