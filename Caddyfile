@@ -1,5 +1,5 @@
 Host {
 	reverse_proxy https://www.baidu.com {
-		header_up Host {upstream_hostport}
+		header_up Host {host}
 	}
 }
