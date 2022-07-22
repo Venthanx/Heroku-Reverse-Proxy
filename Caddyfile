@@ -1,10 +1,4 @@
 :{$PORT} {
-	reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
-		header_up Host {upstream_hostport}
-	}
-}
-:{$PORT}/baidu {
-	reverse_proxy * https://www.baidu.com {
-		header_up Host {upstream_hostport}
+	redir https://www.baidu.com{uri}
 	}
 }
