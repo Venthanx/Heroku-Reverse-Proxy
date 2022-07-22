@@ -1,4 +1,4 @@
 :{$PORT} {
-	root * /www/index.html
+	root * /www
 	file_server
 }
