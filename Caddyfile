@@ -1,4 +1,5 @@
 :{$PORT} {
-	redir https://www.baidu.com{uri}
+	reverse_proxy * https://www.baidu.com {
+		header_up Host {upstream_hostport}
 	}
 }
