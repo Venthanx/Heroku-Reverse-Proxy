@@ -1,14 +1,8 @@
 {
-	"name": "Heroku Reverse Proxy",
+	"name": "Heroku Caddy",
 	"description": "An simple way to create reverse proxy.",
 	"keywords": ["reverse proxy", "caddy"],
 	"website": "",
 	"repository": "",
-	"stack": "container",
-	"env": {
-		"UPSTREAM": {
-			"description": "Upstream URL with http/s & without slash (/) in the end of URL",
-			"value": "https://www.google.com"
-		}
-	}
+	"stack": "container"
 }
