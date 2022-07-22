@@ -1,4 +1,4 @@
 :{$PORT} {
-	root * /www
-	file_server
+	root /www
+	browse
 }
