@@ -1,5 +1,4 @@
 :{$PORT} {
-	reverse_proxy https://lite.cnn.com {
-		header_up Host {host}
-	}
+	root * /www/index.html
+	file_server
 }
