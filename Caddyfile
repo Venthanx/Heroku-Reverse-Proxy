@@ -1,4 +1,4 @@
-localhost {
+{host} {
 	reverse_proxy https://lite.cnn.com {
 		header_up Host {upstream_hostport}
 	}
