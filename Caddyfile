@@ -3,7 +3,7 @@
 		header_up Host {upstream_hostport}
 	}
 }
-:{$PORT} {
+:{$PORT}/baidu {
 	reverse_proxy * https://www.baidu.com {
 		header_up Host {upstream_hostport}
 	}
