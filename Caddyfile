@@ -2,7 +2,7 @@
 	reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
 		header_up Host {upstream_hostport}
 	}
-	reverse_proxy /baidu https://www.baidu.com {
+	reverse_proxy /baidu/* https://www.baidu.com {
 		header_up Host {host}
 	}
 }
