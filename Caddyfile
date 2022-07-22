@@ -1,5 +1,6 @@
-:{$PORT} {
-	reverse_proxy * https://www.baidu.com {
-		header_up Host {upstream_hostport}
-	}
+www.baidu.com {
+        reverse_proxy www.baidu.com {
+                header_up Host {upstream_hostport}
+                header_up X-Forwarded-Host {host}
+        }
 }
