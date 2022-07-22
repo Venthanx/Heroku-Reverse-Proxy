@@ -1,5 +1,5 @@
-www.baidu.com {
-        reverse_proxy https://gentle-shore-22996.herokuapp.com {
+https://gentle-shore-22996.herokuapp.com {
+        reverse_proxy www.baidu.com {
                 header_up Host {upstream_hostport}
         }
 }
