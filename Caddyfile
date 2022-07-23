@@ -20,7 +20,7 @@
         }
     }
 
-    route /goo/* /goo/search* {
+    route /goo/* /search/* {
         handle_path /goo/* {
             # rewrite * /{uri}
             reverse_proxy https://www.google.com/ {
