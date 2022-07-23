@@ -10,6 +10,6 @@
 # 	}
 # }
 
-https://bba.sayonara3.herokuapp.com:{$PORT} {
+https://bba.sayonara3.herokuapp.com:10088 {
     respond "I am admin"
 }
