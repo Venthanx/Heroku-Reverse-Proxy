@@ -22,7 +22,7 @@
 
     route /goo/* {
         handle_path /goo/* {
-            rewrite * {uri}
+            # rewrite * /{uri}
             reverse_proxy https://www.google.com
         }
     }
