@@ -34,7 +34,7 @@
         }
     }
 
-    handle_path /ft/* {
+    handle_path /ftchinese/* {
         reverse_proxy * https://www.ftchinese.com {
             header_up Host {upstream_hostport}
         }
