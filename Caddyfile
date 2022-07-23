@@ -20,10 +20,10 @@
         }
     }
 
-    route /goo/* {
+    route /goo/* /goo/search* {
         handle_path /goo/* {
             # rewrite * /{uri}
-            reverse_proxy https://www.google.com/search/ {
+            reverse_proxy https://www.google.com/ {
                 header_up Host {upstream_hostport}
             }
         }
