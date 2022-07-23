@@ -19,6 +19,10 @@
             header_up Host {upstream_hostport}
         }
     }
+
+	route /test/* {
+        redir https://sayonara3.herokuapp.com
+    }    
 }
 
 # :{$PORT} {
@@ -27,7 +31,4 @@
 # 	}
 # }
 
-:{10943} {
-    respond "I am admin"
-}
 
