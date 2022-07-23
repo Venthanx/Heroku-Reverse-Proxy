@@ -1,6 +1,9 @@
 :{$PORT} {
-	root ./
+
     encode zstd gzip        # 压缩资源文件 加快访问速度
+    #tls /data/data/com.termux/files/home/key/cloud.crt /data/data/com.termux/files/home/key/cloud.key #布置SSL
+
+    root ./
     file_server browse
 
 	route /admin/* {
@@ -9,10 +12,10 @@
 
     route /google/* {
         # redir https://{host}
-        # 
+        # uri strip_prefix /google
         # uri replace /google/ //
-        reverse_proxy * https://www.google.com {
-            uri strip_prefix /google
+        reverse_proxy {
+            to https://www.google.com
             header_up Host {upstream_hostport}
         }
     }
