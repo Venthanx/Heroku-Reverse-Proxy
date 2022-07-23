@@ -8,7 +8,3 @@
 # 		header_up Host {upstream_hostport}
 # 	}
 # }
-
-https://{$host}:8899 {
-	respond "I am 8899"
-}
