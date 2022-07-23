@@ -12,8 +12,8 @@
         # 
         # uri replace /google/ //
         reverse_proxy * https://www.google.com {
-            header_up Host {upstream_hostport}
             uri strip_prefix /google
+            header_up Host {upstream_hostport}
         }
     }
 }
