@@ -9,7 +9,7 @@
 
     route /google/* {
         # respond "I am admin"
-        reverse_proxy * https://www.google.com {
+        reverse_proxy https://www.google.com {
             header_up Host {upstream_hostport}
         }
     }
