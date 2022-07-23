@@ -1,8 +1,8 @@
-:{$PORT} {
-	root ./
-    encode zstd gzip        # 压缩资源文件 加快访问速度
-    file_server browse
-}
+# :{$PORT} {
+# 	root ./
+#     encode zstd gzip        # 压缩资源文件 加快访问速度
+#     file_server browse
+# }
 
 # :{$PORT} {
 # 	reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
@@ -10,6 +10,9 @@
 # 	}
 # }
 
-https://okk.sayonara3.herokuapp.com {
-    respond "I am admin"
+https://sayonara3.herokuapp.com {
+    # respond "I am admin"
+    root ./
+    encode zstd gzip        # 压缩资源文件 加快访问速度
+    file_server browse
 }
