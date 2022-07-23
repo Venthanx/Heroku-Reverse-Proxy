@@ -23,19 +23,27 @@
 
 
     handle_path /mailnesia/* {
-        reverse_proxy https://https://mailnesia.com 
+        reverse_proxy https://https://mailnesia.com {
+            header_up Host {upstream_hostport}
+        }
     }
 
     handle_path /ktnslt/* {
-        reverse_proxy https://kill-the-newsletter.com 
+        reverse_proxy https://kill-the-newsletter.com {
+            header_up Host {upstream_hostport}
+        }
     }
 
     handle_path /ft/* {
-        reverse_proxy https://www.ftchinese.com 
+        reverse_proxy https://www.ftchinese.com {
+            header_up Host {upstream_hostport}
+        }
     }
 
     handle_path /chdigi/* {
-        reverse_proxy https://chinadigitaltimes.net 
+        reverse_proxy https://chinadigitaltimes.net {
+            header_up Host {upstream_hostport}
+        }
     }
 
 
