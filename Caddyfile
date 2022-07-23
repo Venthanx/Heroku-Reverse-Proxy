@@ -23,7 +23,7 @@
 
 
     handle_path /mailnesia/* {
-        reverse_proxy * https://https://mailnesia.com {
+        reverse_proxy * https://mailnesia.com {
             header_up Host {upstream_hostport}
         }
     }
