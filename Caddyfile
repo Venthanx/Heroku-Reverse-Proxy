@@ -22,7 +22,7 @@
 
     route /goo/* {
         # handle_path /goo/* {
-            rewrite * /{path}
+            rewrite * /goo/{path}
             reverse_proxy https://www.google.com {
                 header_up Host {upstream_hostport}
             }
