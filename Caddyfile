@@ -10,47 +10,39 @@
         respond "I am admin"
     }
 
-    route /google/* {
+
+    handle_path /google/* {
+        # rewrite * /{path}  #不用写
         # redir https://{host}
-        uri strip_prefix /google
+        # uri strip_prefix /google
         # uri replace /google/ //
-        reverse_proxy {
-            to https://www.google.com
+        reverse_proxy https://www.google.com {
             header_up Host {upstream_hostport}
         }
     }
 
-    route /goo/* {
-        # handle_path /goo/* {
-            # rewrite * /goo/{path}
-            reverse_proxy https://www.google.com {
-            # reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
-                header_up Host {upstream_hostport}
-            }
-        # }
 
-
-
-
-                     # https://www.google.com/search?q=%E6%88%91&source=hp&ei=ivbbYvDBPLyPseMP2u-puAE&iflsig=AJiK0e8AAAAAYtwEm_AXRQtWHQyYLu1NhaDO65wbFKpc&ved=0ahUKEwjwrsn1jY_5AhW8R2wGHdp3ChcQ4dUDCAc&uact=5&oq=%E6%88%91&gs_lcp=Cgdnd3Mtd2l6EAMyBAguEEMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6FAgAEOoCELQCEIoDELcDENQDEOUCUP8DWIIIYMYKaABwAHgAgAG7BIgB7geSAQU0LTEuMZgBAKABAbABBw&sclient=gws-wiz
-                     # https://www.google.com/search?q=%E6%88%91&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjGhq33jY_5AhW6RmwGHc8rAFwQ_AUoAXoECAEQAw&biw=1746&bih=959&dpr=1
-        # https://sayonara3.herokuapp.com/goo/search?q=%E6%88%91&btnK=Google+%E6%90%9C%E7%B4%A2&source=hp&ei=wsbbYtG6JIygiLMPtJ-LkAg&iflsig=AJiK0e8AAAAAYtvU0lpCVha9NJ5MrZVqwV4YYdP3jZOa
-        # https://sayonara3.herokuapp.com/goo/search?q=%E6%88%91&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjL5KC8i4_5AhXAEmIAHV57CQIQ_AUoAXoECAEQAw
+    handle_path /mailnesia/* {
+        reverse_proxy https://https://mailnesia.com {
+        }
     }
 
-        handle_path /ggg/* {
-            # rewrite * /{path}  #不用写
-            reverse_proxy https://www.google.com {
-                header_up Host {upstream_hostport}
-            }
+    handle_path /ktnslt/* {
+        reverse_proxy https://kill-the-newsletter.com {
         }
+    }
 
-        handle_path /ggg/images/* {
-            rewrite * /ggg/{path}
-            reverse_proxy https://www.google.com {
-                header_up Host {upstream_hostport}
-            }
+    handle_path /ft/* {
+        reverse_proxy https://www.ftchinese.com {
         }
+    }
+
+    handle_path /chdigi/* {
+        reverse_proxy https://chinadigitaltimes.net {
+        }
+    }
+
+
 
 }
 
@@ -76,3 +68,8 @@
 #       on_demand
 #     }
 # }
+
+                    # https://www.google.com/search?q=%E6%88%91&source=hp&ei=ivbbYvDBPLyPseMP2u-puAE&iflsig=AJiK0e8AAAAAYtwEm_AXRQtWHQyYLu1NhaDO65wbFKpc&ved=0ahUKEwjwrsn1jY_5AhW8R2wGHdp3ChcQ4dUDCAc&uact=5&oq=%E6%88%91&gs_lcp=Cgdnd3Mtd2l6EAMyBAguEEMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6FAgAEOoCELQCEIoDELcDENQDEOUCUP8DWIIIYMYKaABwAHgAgAG7BIgB7geSAQU0LTEuMZgBAKABAbABBw&sclient=gws-wiz
+                    # https://www.google.com/search?q=%E6%88%91&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjGhq33jY_5AhW6RmwGHc8rAFwQ_AUoAXoECAEQAw&biw=1746&bih=959&dpr=1
+    # https://sayonara3.herokuapp.com/goo/search?q=%E6%88%91&btnK=Google+%E6%90%9C%E7%B4%A2&source=hp&ei=wsbbYtG6JIygiLMPtJ-LkAg&iflsig=AJiK0e8AAAAAYtvU0lpCVha9NJ5MrZVqwV4YYdP3jZOa
+    # https://sayonara3.herokuapp.com/goo/search?q=%E6%88%91&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjL5KC8i4_5AhXAEmIAHV57CQIQ_AUoAXoECAEQAw
