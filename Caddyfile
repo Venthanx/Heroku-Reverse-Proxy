@@ -27,7 +27,7 @@
 # 	}
 # }
 
-sayonara3.herokuapp.com:12234 {
+:{10943} {
     respond "I am admin"
 }
 
