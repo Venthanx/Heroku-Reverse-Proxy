@@ -20,9 +20,6 @@
         }
     }
 
-	route /test/* {
-        redir https://sayonara3.herokuapp.com:10999
-    }    
 }
 
 # :{$PORT} {
@@ -31,7 +28,7 @@
 # 	}
 # }
 
-Host:10929 {
-    respond "I am 10929"
-}
+# Host:10929 {
+#     respond "I am 10929"
+# }
 
