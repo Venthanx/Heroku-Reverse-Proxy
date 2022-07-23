@@ -6,6 +6,13 @@
 	route /admin/* {
         respond "I am admin"
     }
+
+    route /google/* {
+        # respond "I am admin"
+        reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
+            header_up Host {upstream_hostport}
+        }
+    }
 }
 
 # :{$PORT} {
