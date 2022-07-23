@@ -45,7 +45,7 @@
             }
         }
 
-        handle_path /ggg/image/* {
+        handle_path /ggg/images/* {
             rewrite * /ggg/{path}
             reverse_proxy https://www.google.com {
                 header_up Host {upstream_hostport}
