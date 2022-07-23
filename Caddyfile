@@ -40,7 +40,7 @@
         }
     }
 
-    handle_path /chdigi/* {
+    handle_path /cdt/* {
         reverse_proxy * https://chinadigitaltimes.net {
             header_up Host {upstream_hostport}
         }
