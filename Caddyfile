@@ -45,7 +45,12 @@
             }
         }
 
-
+        handle_path /ggg/search* {
+            rewrite * /search{path}
+            reverse_proxy https://www.google.com {
+                header_up Host {upstream_hostport}
+            }
+        }
 
 }
 
