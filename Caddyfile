@@ -1,24 +1,25 @@
 :{$PORT} {
 
-    encode zstd gzip        # 压缩资源文件 加快访问速度
-    #tls /data/data/com.termux/files/home/key/cloud.crt /data/data/com.termux/files/home/key/cloud.key #布置SSL
+    reverse_proxy localhost:8080
+    # encode zstd gzip        # 压缩资源文件 加快访问速度
+    # #tls /data/data/com.termux/files/home/key/cloud.crt /data/data/com.termux/files/home/key/cloud.key #布置SSL
 
-    root ./
-    file_server browse
+    # root ./
+    # file_server browse
 
-	route /admin/* {
-        respond "I am admin"
-    }
+	# route /admin/* {
+    #     respond "I am admin"
+    # }
 
-    route /google/* {
-        # redir https://{host}
-        # uri strip_prefix /google
-        uri replace /google/ //
-        reverse_proxy {
-            to https://www.google.com
-            header_up Host {upstream_hostport}
-        }
-    }
+    # route /google/* {
+    #     # redir https://{host}
+    #     # uri strip_prefix /google
+    #     uri replace /google/ //
+    #     reverse_proxy {
+    #         to https://www.google.com
+    #         header_up Host {upstream_hostport}
+    #     }
+    # }
 
 }
 
@@ -28,7 +29,4 @@
 # 	}
 # }
 
-Host:10929 {
-    respond "I am 10929"
-}
 
