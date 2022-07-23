@@ -9,3 +9,7 @@
 # 		header_up Host {upstream_hostport}
 # 	}
 # }
+
+https://bba.sayonara3.herokuapp.com:{$PORT} {
+    respond "I am admin"
+}
