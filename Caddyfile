@@ -32,7 +32,7 @@
         # https://sayonara3.herokuapp.com/goo/search?q=%E6%88%91&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjL5KC8i4_5AhXAEmIAHV57CQIQ_AUoAXoECAEQAw
     }
 
-    route /goo/search* {
+    route /goo/search/* {
         handle_path /goo/* {
         # rewrite * /{uri}
     }
