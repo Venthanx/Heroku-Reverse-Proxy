@@ -1,4 +1,4 @@
-localhost {
+:{upstream_hostport} {
 	root ./
     encode zstd gzip        # 压缩资源文件 加快访问速度
     file_server browse
