@@ -46,7 +46,11 @@
         }
     }
 
-
+    handle_path /k4r/* {
+        reverse_proxy * http://feedmaker.kindle4rss.com {
+            header_up Host {upstream_hostport}
+        }
+    }
 
 }
 
