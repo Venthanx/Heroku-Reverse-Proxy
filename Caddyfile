@@ -23,8 +23,8 @@
     route /goo/* {
         # handle_path /goo/* {
             # rewrite * /goo/{path}
-            # reverse_proxy https://www.google.com {
-            reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
+            reverse_proxy https://www.google.com {
+            # reverse_proxy * {$UPSTREAM:"https://www.google.com"} {
                 header_up Host {upstream_hostport}
             }
         # }
@@ -37,6 +37,14 @@
         # https://sayonara3.herokuapp.com/goo/search?q=%E6%88%91&btnK=Google+%E6%90%9C%E7%B4%A2&source=hp&ei=wsbbYtG6JIygiLMPtJ-LkAg&iflsig=AJiK0e8AAAAAYtvU0lpCVha9NJ5MrZVqwV4YYdP3jZOa
         # https://sayonara3.herokuapp.com/goo/search?q=%E6%88%91&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjL5KC8i4_5AhXAEmIAHV57CQIQ_AUoAXoECAEQAw
     }
+
+        handle_path /ggg/* {
+            # rewrite * /goo/{path}
+            reverse_proxy https://www.google.com {
+                header_up Host {upstream_hostport}
+            }
+        }
+
 
 }
 
