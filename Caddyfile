@@ -8,7 +8,8 @@
     }
 
     route /google/* {
-        redir https://{host}
+        # redir https://{host}
+        uri strip_prefix /google
         reverse_proxy * https://www.google.com {
             header_up Host {upstream_hostport}
         }
