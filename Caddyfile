@@ -39,14 +39,14 @@
     }
 
         handle_path /ggg/* {
-            # rewrite * /{path}
+            # rewrite * /{path}  #不用写
             reverse_proxy https://www.google.com {
                 header_up Host {upstream_hostport}
             }
         }
 
-        handle_path /ggg/search* {
-            rewrite * /{path}
+        handle_path /ggg/image/* {
+            rewrite * /image/{path}
             reverse_proxy https://www.google.com {
                 header_up Host {upstream_hostport}
             }
