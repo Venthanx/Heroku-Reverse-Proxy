@@ -1,8 +1,8 @@
 :{$PORT} {
-	root * ./www/
+	# root * ./www/
     encode zstd gzip        # 压缩资源文件 加快访问速度
     file_server {
-        index /guideline.html
+        index ./www/guideline.html
         # browse
     }
 }
