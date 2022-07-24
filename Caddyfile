@@ -3,8 +3,17 @@
     encode zstd gzip        # 压缩资源文件 加快访问速度
     #tls /data/data/com.termux/files/home/key/cloud.crt /data/data/com.termux/files/home/key/cloud.key #布置SSL
 
-    root ./
-    file_server browse
+    # root ./
+    # file_server browse
+    file_server {               # 启用静态文件服务器
+        # root          /www      # 设置根目录路径
+        # hide          .git    # 隐藏指定文件
+        index         index.html guideline.html
+        # browse        [<template_file>] # 对于没有索引文件的目录的请求 为其启用文件列表
+        # precompressed zstd br gzip
+        # status      404   # xxx时才启用
+        # disable_canonical_uris
+    }
 
 	route /admin/* {
         respond "I am admin"
