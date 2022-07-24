@@ -64,12 +64,6 @@
         }
     }
 
-    handle_path /wikich/* {
-        reverse_proxy * https://zh.wikipedia.org {
-            header_up Host {upstream_hostport}
-        }
-    }
-
 }
 
 # :{$PORT} {
