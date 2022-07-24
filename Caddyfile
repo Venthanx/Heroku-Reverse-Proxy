@@ -6,7 +6,7 @@
     # root ./
     # file_server browse
     file_server {               # 启用静态文件服务器
-        root    * ./www/        # 设置根目录路径
+        root    * /www/        # 设置根目录路径
         # hide      .git        # 隐藏指定文件
         # index     index.html guideline.html
         browse                  # 对于没有索引文件的目录的请求 为其启用文件列表 [<template_file>]
