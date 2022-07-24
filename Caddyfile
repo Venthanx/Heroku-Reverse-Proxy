@@ -64,8 +64,8 @@
         }
     }
 
-    handle_path /bd/* {
-        reverse_proxy * https://www.baidu.com {
+    handle_path /wiki/* {
+        reverse_proxy * https://zh.wikipedia.org {
             header_up Host {upstream_hostport}
         }
     }
