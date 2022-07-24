@@ -4,5 +4,15 @@
 	"keywords": ["reverse proxy", "caddy"],
 	"website": "",
 	"repository": "",
-	"stack": "container"
+	"stack": "container",
+	"env": {
+		"UPSTREAM": {
+			"description": "Upstream URL ( 请带上 http/s & 结尾无需 '/' )",
+			"value": "https://www.sogou.com"
+		},
+		"PORT": {
+			"description": "端口号",
+			"value": "10001"
+		}
+	}
 }
